@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title> Мое путешествие </title>{% endblock %}
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+{% load staticfiles %}
+<body>
+<div id = "header">
+
+			<h2 align ="left">Cоздай путешествие своей мечты!</h2>
+
+
+	<div class = "navig">
+
+  <ul>
+    <li><a href="{% url 'catalog:main'%}">Главная</a></li>
+    <li><a href="{% url 'catalog:vitrina' category_slug='Tours'%}">Готовые туры</a></li>
+      <li><a href="{% url 'catalog:vitrina' category_slug='Attract' %}">Развлечения на отдыхе</a></li>
+
+
+
+  </ul>
+  </div>
+</div>
+{% block content %}{% endblock %}
+ <div id ="footer"></div>
+</body>
+</html>

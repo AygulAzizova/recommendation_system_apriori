@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Мое путешествие</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+	</head>
+
+
+  {% load staticfiles %}
+	<body>
+	
+	<div id = "header">
+		
+			<h2 align ="center">Cоздай путешествие своей мечты!</h2>			 
+			 <div class="logo">
+					<a href="index.html">
+						<img src="img/logo.png" width="227" height="200" />
+					</a>
+		
+			</div>
+	</div>
+	<div class = "navig">
+	
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Каталог</a></li>
+    <li class="right"><a href="basket.html">Корзина</a></li>
+    <li class="right"><a href="reg.html">Регистрация</a></li>
+	<li class="right"><a href="login.html">Вход</a></li>
+ 
+
+  </ul>
+  </div>
+  <div id = "content">
+  <h2 align ="center">Наши самые популярные туры!</h2>		
+  <table align="center" border="1" width="85%" height="700px cellpadding="5">
+   <tr>
+    <td>Ячейка 1</td>
+    <td>Ячейка 2</td>
+   </tr>
+   <tr>
+    <td>Ячейка 3</td>
+    <td>Ячейка 4</td>
+  </tr>
+ </table>
+  </div>
+
+  
+	<div id ="footer"></div>
+	
+	</body>
+	
+
+</html>

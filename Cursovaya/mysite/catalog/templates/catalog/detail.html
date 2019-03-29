@@ -1,0 +1,60 @@
+{% extends "catalog/base.html" %}
+{% block title %}
+  Описание товара
+{% endblock %}
+{% block content %}
+  <div id = "content">
+     <table border="0" align="center" width="100%" >
+         <tr>
+            <td align="center" width="50%" ><img height="240" width="430" src="{{tour.TourImage.url}}">
+
+
+
+     <table align="left" style='font-family:"Arial"' >
+
+         <form  action="{% url 'cart:CartAdd' tour.id %}" method="post">
+             <p style='text-decoration: none;  text-decoration: none; background:#FF8C00; color:#fff;'>{{ tour.PriceAdult}} руб.</p>
+              {{ cart_product_form }}
+               {% csrf_token %}
+              <input type="submit" value="Добавить в корзину">
+             </form>
+            <tr><td align="left"><font size=4><b>Название: </b></font></td>
+            <td><font size=4>{{ tour.TourName }}</font></td></tr>
+
+            <tr ><td  align="left" ><font size=4><b>Страна: </b></font></td>
+            <td><font size=4>{{tour.TourCountry}}</font></td></tr>
+            <tr ><td style='text-decoration: none;'align="left" ><font size=4><b>Город: </b></font></td>
+            <td><font size=4>{{point.PointCity}}</font></td></tr>
+            <tr ><td style='text-decoration: none;'align="left" ><font size=4><b>Отель: </b></font></td>
+            <td><font size=4>{{point.PointHotel}}</font></td></tr>
+            <tr class="tablefont"><td align="left"><font size=4><b>Дата Начала: </b></font></td>
+            <td> <font size=4>{{tour.TourDateStart}}</font></td></tr>
+
+
+	        <tr class="tablefont"><td align="left"><font size=4><b>Дата Окончания: </b></font></td>
+            <td><font size=4>{{tour.TourDateEnd}}</font></td></tr>
+
+	        <tr class="tablefont"><td align="left"><font size=4><b>Сколько ночей: </b></font></td>
+            <td><font size=4>{{tour.TourDuration}}</font></td></tr>
+
+	        <tr class="tablefont"><td align="left"><font size=4><b>Цена: </b></font></td>
+            <td><font size=4>{{tour.PriceAdult}} руб.</font></td></tr>
+
+             <tr class="tablefont"><td align="left"><font size=4><b>Описание: </b></font></td>
+             <td><font size=4>{{tour.Comments}}</font></td></tr>
+
+
+
+   </table>
+   </td>
+   </tr>
+
+   </table>
+
+      {% endblock %}
+
+  <div id ="footer"></div>
+  </div>
+
+  </body>
+  </html>

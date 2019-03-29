@@ -1,0 +1,32 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}
+  Оформление заказа
+{% endblock %}
+
+{% block content %}
+<div id="content">
+  <h1>Оформление заказа</h1>
+  <div>
+    <h2>Заполните форму</h2>
+    <form   action="." method="post">
+      {{ form.as_table }}
+      {% csrf_token %}
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+
+  <div>
+    <h2>Ваш заказ</h2>
+    <ul>
+      {% for item in cart  %}
+        <li>
+          {{ item.tour.TourName }} | Количество: {{ item.quantity }} | Цена: {{ item.total_price }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}
+  Спасибо за заказ
+{% endblock %}
+
+
+{% block content %}
+<div id="content">
+  <h1>Спасибо за заказ!</h1>
+  <h2>Идентификатор вашего заказа: {{ order.id }}</h2>
+  <h2>Возможно, вам понравится это </h2>
+  {% for elem in listofr %}
+  {% for tour in tours %}
+
+        {% if  elem == tour.id %}
+         <table border="0" align="center" width="100%" >
+         <tr>
+            <td align="center" width="50%" ><img height="240" width="430" src="{{tour.TourImage.url}}">
+              <td>
+          <table align="left" style='font-family:"Arial"' >
+            <tr><td align="left"><font size=4><b>Название: </b></font></td>
+            <td><font size=4>{{ tour.TourName }}</font></td></tr>
+
+            <tr ><td  align="left" ><font size=4><b>Страна: </b></font></td>
+            <td><font size=4>{{tour.TourCountry}}</font></td></tr>
+            {% for p in points %}
+                 {% if p.PointTour.id == tour.id %}
+            <tr ><td style='text-decoration: none;'align="left" ><font size=4><b>Город: </b></font></td>
+            <td><font size=4>{{p.PointCity}}</font></td></tr>
+            {% endif %}
+            {% endfor %}
+              <tr > <center><a style='text-decoration: none;  text-decoration: none; background:#FF8C00; color:#fff;'  href="{% url 'catalog:detail' id=tour.id slug=tour.slug %}">
+      <font size=5>Подробнее  </font></a></center></td></tr>
+            {% endif %}
+            {% endfor %}
+          </table>
+            </td>
+             </tr>
+            {% endfor %}
+
+
+
+   </table>
+
+   </div>
+
+
+
+{% endblock %}
+
+
+<div id ="footer"></div>
+  </div>
